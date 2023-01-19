@@ -1,0 +1,13 @@
+.skill{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.skill-name{
+  flex: 2;
+}
+
+.skill-level, .skill-experience{
+  flex: 1;
+}

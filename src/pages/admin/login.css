@@ -1,0 +1,39 @@
+.login{
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.login form{
+  background: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  padding: 4em;
+  min-width: 18em;
+  width: 35%;
+}
+
+.login h1{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.login input{
+  display: block;
+  padding: 1.5em 0;
+  border: none;
+  outline: none;
+  margin-bottom: 1em;
+  width: 100%;
+  border-bottom: solid 1px rgba(255, 255, 255, .1);
+  background: transparent;
+  color: white;
+}
+
+.login input[type='submit']{
+  background-color: blue;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-top: 2em;
+}

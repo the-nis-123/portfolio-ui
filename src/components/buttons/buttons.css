@@ -1,0 +1,14 @@
+.download{
+  outline: none;
+  padding: 12px 1em;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+  width: 80%;
+  background: inherit;
+  color: yellowgreen;
+  border: 1px solid yellowgreen;
+  cursor: pointer;
+}

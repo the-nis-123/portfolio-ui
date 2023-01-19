@@ -1,0 +1,65 @@
+.upload{
+  background: rgba(255, 255, 255, .1);
+}
+
+input, textarea{
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  margin: 1em 0 2em 0;
+  font: inherit;
+}
+
+input, textarea:not(input[type='submit'], input[type='file']){
+  border-bottom: solid 1px rgba(255, 255, 255, .1);
+  padding: 1em 0 10px 0 !important;
+}
+
+input[type='submit']{
+  background: blue;
+  color: white;
+  width: 10em;
+  cursor: pointer;
+  padding: 10px 20px !important;
+}
+
+
+input[type='file']{
+ padding: 1em 0;
+ cursor: pointer;
+ border-bottom: none;
+}
+
+
+textarea, input[type='date']{
+  resize: none;
+}
+
+
+.activity-status{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 1em 0;
+}
+
+.activity-status input[type='checkbox']{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  accent-color: blue;
+  padding: 0;
+  margin: 0;
+}
+
+.upload > section  p{
+  padding: 5px 0;
+  font-size: 80%;
+}
+
+.flexed-form{
+  display: flex;
+}

@@ -1,0 +1,10 @@
+.social-handles{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em 0;
+}
+
+.social-handles svg{
+  color: yellowgreen;
+}

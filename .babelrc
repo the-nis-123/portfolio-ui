@@ -1,0 +1,8 @@
+{
+    "plugins": ["jsx-control-statements"]
+  }
+  
+  
+  //
+  //npm install --save-dev babel-plugin-jsx-control-statements react-app-rewired customize-cra
+  //npm install -g eslint-plugin-jsx-control-statements
