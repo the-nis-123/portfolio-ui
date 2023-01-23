@@ -24,7 +24,7 @@ const AwardsForm = ({data}) => {
 
   return (
     <section>
-      <h4>Awards and certificates <span>&#127891;</span> </h4>
+      <h3>Awards and certificates <span>&#127891;</span> </h3>
       <form onSubmit={handleUpload}>
         <input 
           name='name' 

@@ -1,16 +1,12 @@
-import { useNavigate } from "react-router-dom"
-
-const TimelineCard = ({summary}) => {
+const TimelineCard = ({highlight}) => {
   
-  const navigate = useNavigate();
-
   return (
-    <div className='timeline-card' onClick={ () => navigate('/timeline')}>
+    <div className='timeline-card'>
       <section className="content">
-        <h4>{summary.year}</h4>
+        <h4>{highlight.year}</h4>
 
         <ol className='works'>
-          <For each='work' of={summary.works}>
+          <For each='work' of={highlight.works}>
             <li key={work}>{work}</li>
           </For>
         </ol>

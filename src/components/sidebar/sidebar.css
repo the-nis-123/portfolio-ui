@@ -19,15 +19,11 @@
 .menu>a{
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
   text-decoration: none;
   color: #FF9F55;
   margin: 2em 0;
-}
-
-.hearts{
-  color: var(--background);
+  gap: 10px;
 }
 
 .menu>a:hover .hearts{

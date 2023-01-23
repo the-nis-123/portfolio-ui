@@ -23,7 +23,7 @@ const HobbiesForm = ({ data }) => {
 
   return (
     <section>
-      <h4>Hobbies <span>&#128175;</span> </h4>
+      <h3>Hobbies <span>&#128175;</span> </h3>
       <form onSubmit={handleUpload} className='flexed-form'>
         <input 
           type='text' 

@@ -28,7 +28,7 @@ const BioForm = () => {
 
   return (
     <section>
-      <h4>Biography <span>&#9997;</span></h4>
+      <h3>Biography <span>&#9997;</span></h3>
       <form onSubmit={handleUpload}>
         <textarea 
           name="intro"
@@ -43,6 +43,12 @@ const BioForm = () => {
           placeholder='Motivation to do software'
           onChange={handleChange}
         />
+
+        <p>Upload/Change your resume</p>
+        <input type='file' name='resume'/>
+
+        <p>Upload/updated your avatar</p>
+        <input type='file' name='avatar' />
 
         <input type='submit' value='Save bio' />
       </form>

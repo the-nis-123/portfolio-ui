@@ -1,6 +1,20 @@
 import { useEditDataMutation } from "../../app/api/coreApiSlice";
 import { useState } from "react";
 
+const socialHandles = [{
+  "name":"linkedin",
+  "url":"https://www.linkedin.com/in/kintu-denis/"
+},
+{
+  "name":"twitter",
+  "url":"https://twitter.com/tthhenis"
+},
+{
+  "name":"github",
+  "url":"https://github.com/the-nis-123"
+}
+]
+
 const SkillsForm = ({skillsData, otherSkillsData}) => {
   const [skills, setSkills] = useState({});
   const [otherSkills, setOtherSkills] = useState("");
@@ -18,11 +32,13 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
   const handleUploadSkill = async (e) => {
     e.preventDefault();
     const formData = new FormData();
+    formData.append('skills', JSON.stringify(skills))
+    formData.append('socialHandles', JSON.stringify(socialHandles))
 
     try {
         const res = await uploadSkills({
-        url: "/api/administrator/projects",
-        body: formData.append('skills', JSON.stringify(skills))
+        url: "/api/administrator/profile",
+        body: formData
       }).unwrap();
   
       console.log(res);
@@ -34,11 +50,12 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
   const handleOtherSkillsUpload = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-
+    formData.append('otherSkills', otherSkills);
+    
     try {
         const res = await uploadOtherSkills({
-        url: "/api/administrator/projects",
-        body: formData.append('otherSkills', otherSkills)
+        url: "/api/administrator/profile",
+        body: formData
       }).unwrap();
   
       console.log(res);
@@ -50,7 +67,7 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
 
   return (
     <section>
-      <h4>Add a new skill <span>&#128187;</span></h4>
+      <h3>Add a new skill <span>&#128187;</span></h3>
       <section>
         <form onSubmit={handleUploadSkill}>
           <input 

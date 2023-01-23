@@ -24,7 +24,7 @@ const UploadToGalleryForm = () => {
 
   return (
     <section>
-      <h4>Upload to gallery <span>&#128526;</span> </h4>
+      <h3>Upload to gallery <span>&#128526;</span> </h3>
       <form onSubmit={handleUpload}>
         <p>upload images and screen shots to your gallery</p>
         <input 

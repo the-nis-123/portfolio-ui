@@ -1,8 +1,9 @@
 .upload{
   background: rgba(255, 255, 255, .1);
+  padding: 2em 5em;
 }
 
-input, textarea{
+input, textarea, select{
   display: block;
   width: 100%;
   background: transparent;
@@ -38,6 +39,10 @@ textarea, input[type='date']{
   resize: none;
 }
 
+select{
+  color: yellowgreen;
+}
+
 
 .activity-status{
   display: flex;
@@ -58,6 +63,12 @@ textarea, input[type='date']{
 .upload > section  p{
   padding: 5px 0;
   font-size: 80%;
+}
+
+
+.upload > section{
+  background-color: rgba(255, 255, 255, .1);
+  padding: 2em;
 }
 
 .flexed-form{

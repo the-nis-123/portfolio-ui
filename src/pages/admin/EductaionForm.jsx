@@ -17,13 +17,15 @@ const EductaionForm = ({data}) => {
   const handleUpload = async (e) => {
     e.preventDefault();
     const formData = new FormData();
+    formData.append('education', JSON.stringify(education));
+
     try {
       const res = await uploadData({
         url: "/api/administrator/profile",
-        body: formData.append('education', JSON.stringify(education))
+        body: formData
       }).unwrap();
   
-      console.log(res);
+      console.log(formData.get('education'));
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +33,7 @@ const EductaionForm = ({data}) => {
 
   return (
     <section>
-      <h4>Add education details <span>&#127971;</span></h4>
+      <h3>Add education details <span>&#127971;</span></h3>
       <form onSubmit={handleUpload}>
         <input 
           name='institution' 

@@ -5,7 +5,10 @@ import UploadToGalleryForm from './UploadToGalleryForm';
 import EductaionForm from './EductaionForm';
 import SkillsForm from './SkillsForm';
 import AwardsForm from './AwardsForm';
+import AnnualHighlights from './AnnualHighlights';
+import SocialHandles from './SocialHandles';
 import HobbiesForm from './HobbiesForm';
+
 import { useGetProfileQuery } from '../../app/api/coreApiSlice';
 
 const Upload = () => {
@@ -20,6 +23,8 @@ const Upload = () => {
       <AwardsForm/>
       <HobbiesForm/>
       <UploadToGalleryForm/>
+      <AnnualHighlights/>
+      <SocialHandles />
     </div>
   )
 }

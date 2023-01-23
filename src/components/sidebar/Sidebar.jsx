@@ -25,18 +25,18 @@ const Sidebar = () => {
 
       <div className='menu'>
         <Link to='/'>
+          <span className='hearts'>&#9654;</span>
           <span>Me, Programming and Software</span>
-          <span className='hearts'>&hearts;</span>
         </Link>
         
         <Link to='/timeline'>
-          <span>Experience Timeline</span>
-          <span className='hearts'>&hearts;</span>
+          <span className='hearts'>&#9654;</span>
+          <span>Career experience</span>
         </Link>
 
         <Link to='/gallery'>
+          <span className='hearts'>&#9654;</span>
           <span>Projects Gallery</span>
-          <span className='hearts'>&hearts;</span>
         </Link>
         
         <Socials />
@@ -44,7 +44,7 @@ const Sidebar = () => {
 
         <div className='timeline'>
           <For each='timeline' of={timelines.sort( (a, b) => b.year - a.year )}>
-            <TimelineCard summary={timeline} />
+            <TimelineCard highlight={timeline} />
           </For>
         </div>
       </div>

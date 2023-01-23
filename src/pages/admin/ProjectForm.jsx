@@ -10,11 +10,12 @@ const ProjectForm = () => {
   
   const handleUpload = async (e) => {
     e.preventDefault();
+    formData.append('isOnGoing', projectStatus)
 
     try {
       const res = await uploadData({
         url: "/api/administrator/projects",
-        body: formData.append('isOnGoing', projectStatus)
+        body: formData
       }).unwrap();
   
       console.log(res);
@@ -26,10 +27,10 @@ const ProjectForm = () => {
 
   return (
     <section>
-      <h4>Add new project <span>&#128540;</span> </h4>
+      <h3>Add new project <span>&#128540;</span> </h3>
       <form onSubmit={handleUpload}>
         <input 
-          name='name' 
+          name='projectName' 
           placeholder='Name of project' 
           type='text'
           onChange={handleChange}
@@ -69,7 +70,7 @@ const ProjectForm = () => {
         <p>Links</p>
         <input 
           type='url' 
-          name='active_url' 
+          name='activeUrl' 
           autoComplete="off"
           placeholder='Active url'
           onChange={handleChange}
@@ -77,7 +78,7 @@ const ProjectForm = () => {
         
         <input 
           type='url' 
-          name='source_code_url' 
+          name='sourceCode' 
           autoComplete="off"
           placeholder='Source code url'
           onChange={handleChange}
