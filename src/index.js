@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { Route, Routes, HashRouter } from 'react-router-dom';
 import Home from './pages/home/Home';
-import Timeline from './pages/timeline/Timeline';
+import Timeline from './pages/projects timeline/Timeline';
 import Loading from './components/loading/Loading';
 import PersistLogin from './PersistLogin';
 import RequireAuth from './RequireAuth';

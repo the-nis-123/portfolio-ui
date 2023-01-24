@@ -1,6 +1,11 @@
 import  './timeline.css';
+import { useGetProjectsQuery } from '../../app/api/coreApiSlice';
 
 function Timeline() {
+
+  const res = useGetProjectsQuery();
+  console.log(res);
+  
 
   return (
     <div className='page-wrapper'>
