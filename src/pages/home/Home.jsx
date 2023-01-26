@@ -1,53 +1,67 @@
 import  './home.css';
-import { useGetProfileQuery } from '../../app/api/coreApiSlice';
-import { setUserId } from '../../app/features/authSlice';
-import { useDispatch } from 'react-redux';
 import Skill from '../../components/skill/Skill';
 import Award from '../../components/award card/Award';
 import Education from '../../components/education badge/Education';
+import useProfileContext from '../../hooks/useProfileContext';
+import Loading from '../../components/loading/Loading';
 
 function Home() {
-  const dispatch = useDispatch();
-  const {isLoading, isError, error, data} = useGetProfileQuery();
-  data && dispatch(setUserId(data._id));
-  console.log(data);
+  const {userProfile, error, isLoading, 
+    awards, awardsError, awardsLoading} = useProfileContext();
+
+  console.log(userProfile);
+
+  if(isLoading || awardsLoading){
+    return <Loading/>
+  }
 
   return (
     <div className='page-wrapper'>
       <section>
         <h3> <span>&#9997;</span> Intro</h3>
-        <p>{data?.intro}</p>
+        <p>{userProfile?.intro}</p>
       </section>
       
       <section>
         <h3>Why and how I became a software engineer
           <span>&#128525;</span>
         </h3>
-        <p>{data?.motivation}</p>
+        <p>{userProfile?.motivation}</p>
       </section>
 
 
       <section>
         <h3>Skills <span>&#128187;</span> </h3>
-        <Skill />
-        <Skill />
-        <Skill />
+        <If  condition={userProfile?.skills}>
+          <For each='skill' of={userProfile.skills}>
+            <Skill key={skill.skill} data={skill} />
+          </For>
+        </If>
 
         <h4> <span>&#9989;</span> Other skills</h4>
+        <If  condition={userProfile?.otherSkills}>
+          <For each='otherSkill' of={userProfile.otherSkills}>
+            <p key={otherSkill}>{otherSkills}</p>
+          </For>
+        </If>
       </section>
 
       <section>
         <h3> <span>&#127971;</span> Education</h3>
-        <Education />
-        <Education />
-        <Education />
+        <If  condition={userProfile?.education}>
+          <For each='school' of={userProfile.education}>
+            <Education key={school.startDate} data={school} />
+          </For>
+        </If>
       </section>
 
       <section>
         <h3>Awards <span>&#127891;</span></h3>
-        <Award />
-        <Award />
-        <Award />
+        <If  condition={awards}>
+          <For each='award' of={awards}>
+            <Award key={award._id} data={award} />
+          </For>
+        </If>
       </section>
 
       <section>

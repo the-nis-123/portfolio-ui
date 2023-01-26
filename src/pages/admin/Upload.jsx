@@ -10,9 +10,10 @@ import SocialHandles from './SocialHandles';
 import HobbiesForm from './HobbiesForm';
 
 import { useGetProfileQuery } from '../../app/api/coreApiSlice';
+import useProfileContext from '../../hooks/useProfileContext';
 
 const Upload = () => {
-  const {isLoading, isError, error, data} = useGetProfileQuery();
+  const {isLoading, isError, error, data} = useProfileContext();
   
   return (
     <div className='page-wrapper upload'>

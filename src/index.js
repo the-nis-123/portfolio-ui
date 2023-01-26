@@ -7,6 +7,7 @@ import Timeline from './pages/projects timeline/Timeline';
 import Loading from './components/loading/Loading';
 import PersistLogin from './PersistLogin';
 import RequireAuth from './RequireAuth';
+import ProfileProvider from './contexts/ProfileContext';
 
 import { Provider } from 'react-redux';
 import store from './app/store';
@@ -20,25 +21,27 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <StrictMode>
     <Provider store={store}>
-      <HashRouter>
-        <Suspense fallback={<Loading/>}>
-          <Routes>
-            <Route path='/' element={<App /> }> 
-              <Route index element={<Home/> } />
-              <Route path='/gallery' element={<Gallery /> } />
-              <Route path='/timeline' element={<Timeline /> } />
+      <ProfileProvider>
+        <HashRouter>
+          <Suspense fallback={<Loading/>}>
+            <Routes>
+              <Route path='/' element={<App /> }> 
+                <Route index element={<Home/> } />
+                <Route path='/gallery' element={<Gallery /> } />
+                <Route path='/timeline' element={<Timeline /> } />
 
-              {/* <Route element={<PersistLogin />}>
-                <Route element={<RequireAuth />}> */}
-                  <Route path='/upload' element={<Upload /> } />
-                </Route>
-              {/* </Route>
-            </Route> */}
+                {/* <Route element={<PersistLogin />}>
+                  <Route element={<RequireAuth />}> */}
+                    <Route path='/upload' element={<Upload /> } />
+                  </Route>
+                {/* </Route>
+              </Route> */}
 
-            <Route path='/login' element={<Login/> } />
-          </Routes>
-          </Suspense>
-      </HashRouter>
+              <Route path='/login' element={<Login/> } />
+            </Routes>
+            </Suspense>
+        </HashRouter>
+      </ProfileProvider>
     </Provider>
   </StrictMode>
 );

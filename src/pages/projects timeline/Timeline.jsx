@@ -1,18 +1,23 @@
 import  './timeline.css';
 import { useGetProjectsQuery } from '../../app/api/coreApiSlice';
+import Post from './PostCard';
+import Loading from '../../components/loading/Loading';
 
 function Timeline() {
 
-  const res = useGetProjectsQuery();
-  console.log(res);
-  
+  const {isLoading, data, isError, Error} = useGetProjectsQuery();
+
+  if(isLoading){
+    return <Loading />
+  }
 
   return (
     <div className='page-wrapper'>
-      <section className='post'>1</section>
-      <section className='post'>2</section>
-      <section className='post'>3</section>
-      <section className='post'>4</section>
+      <If condition={data}>
+        <For each="post" of={data}>
+          <Post data={post}/>
+        </For>
+      </If>
     </div>
   )
 }
