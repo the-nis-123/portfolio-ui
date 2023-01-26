@@ -1,9 +1,11 @@
 import useFormData from "../../hooks/useFormData";
 import { useUploadDataMutation } from "../../app/api/coreApiSlice";
 import Award from "../../components/award card/Award";
+import Spinner from '../../components/loading/Spinner';
 
 const AwardsForm = ({data}) => {
   const { handleChange, formData} = useFormData();
+
   const [uploadData, response] = useUploadDataMutation();
   
   const handleUpload = async (e) => {
@@ -57,7 +59,10 @@ const AwardsForm = ({data}) => {
           onChange={handleChange}
         />
 
-        <input type='submit' value='Save award' />
+        <section className='form-buttons-wrapper'>
+          <input type='submit' value='Save award' />
+          {response?.isLoading && <Spinner/>}
+        </section>
       </form>
 
       <If condition={data}>

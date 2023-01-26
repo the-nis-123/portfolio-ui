@@ -1,7 +1,10 @@
 import {useState} from 'react'
+import Spinner from '../../components/loading/Spinner';
+import { useEditDataMutation } from "../../app/api/coreApiSlice";
 
 const AnnualHighlights = () => {
   const [data, setData] = useState({});
+  const [uploadData, response] = useEditDataMutation();
 
   const handleObjectUpdate = (e) => {
     const newField = {};
@@ -49,7 +52,10 @@ const AnnualHighlights = () => {
           onChange={handleObjectUpdate}
         />
 
-        <input type='submit' value='Add a highlight' />
+        <section className='form-buttons-wrapper'>
+          <input type='submit' value='Add a highlight' />
+          {response?.isLoading && <Spinner/>}
+        </section>
       </form>
     </section>
   )

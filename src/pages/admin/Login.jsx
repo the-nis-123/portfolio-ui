@@ -33,10 +33,13 @@ function Login() {
           onChange={handleChange}
         />
 
-        <input 
-          type='submit' 
-          value='Submit'
-        />
+        <section className='form-buttons-wrapper'>
+          <input 
+            type='submit' 
+            value='Submit'
+          />
+          {response?.isLoading && <Spinner/>}
+        </section>
       </form>
     </div>
   )

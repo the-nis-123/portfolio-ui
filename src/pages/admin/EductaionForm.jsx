@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEditDataMutation } from "../../app/api/coreApiSlice";
+import Spinner from '../../components/loading/Spinner';
 
 const EductaionForm = ({data}) => {
   const [educationStatus, setEducationStatus] = useState(true);
@@ -89,7 +90,10 @@ const EductaionForm = ({data}) => {
           />
         </If>
 
-        <input type='submit' value='Save education' />
+        <section className='form-buttons-wrapper'>
+          <input type='submit' value='Save education' />
+          {response?.isLoading && <Spinner/>}
+        </section>
       </form>
 
       <If condition={data}>

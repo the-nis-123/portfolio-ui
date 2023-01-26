@@ -1,9 +1,11 @@
 import {useState} from 'react'
-import useFormData from '../../hooks/useFormData'
+import Spinner from '../../components/loading/Spinner';
+import { useEditDataMutation } from "../../app/api/coreApiSlice";
 
 const SocialHandles = () => {
   const [data, setData] = useState({});
-  
+  const [uploadData, response] = useEditDataMutation();
+
   const handleObjectUpdate = (e) => {
     const newField = {};
     newField[e.target.name] = e.target.value
@@ -48,7 +50,10 @@ const SocialHandles = () => {
           onChange={handleObjectUpdate}
         />
 
-        <input type='submit' value='Add' />
+        <section className='form-buttons-wrapper'>
+          <input type='submit' value='Add' />
+          {response?.isLoading && <Spinner/>}
+        </section>
       </form>
     </section>  
   )

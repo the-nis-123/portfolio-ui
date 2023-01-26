@@ -1,5 +1,6 @@
 import useFormData from "../../hooks/useFormData";
 import { useUploadDataMutation } from "../../app/api/coreApiSlice";
+import Spinner from '../../components/loading/Spinner';
 
 const UploadToGalleryForm = () => {
 
@@ -34,10 +35,14 @@ const UploadToGalleryForm = () => {
           onChange={handleChange}
         />
 
-        <input 
-          type='submit' 
-          value='Upload to gallery' 
-        />
+        <section className='form-buttons-wrapper'>
+          <input 
+            type='submit' 
+            value='Upload to gallery' 
+          />
+
+          {response?.isLoading && <Spinner/>}
+        </section>
       </form>
     </section>
   )

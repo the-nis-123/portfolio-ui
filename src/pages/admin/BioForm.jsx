@@ -1,6 +1,7 @@
 import useFormData from "../../hooks/useFormData";
 import { useEditDataMutation } from "../../app/api/coreApiSlice";
 import { useSelector } from "react-redux";
+import Spinner from '../../components/loading/Spinner';
 
 const BioForm = () => {
   
@@ -50,7 +51,10 @@ const BioForm = () => {
         <p>Upload/updated your avatar</p>
         <input type='file' name='avatar' />
 
-        <input type='submit' value='Save bio' />
+        <section className='form-buttons-wrapper'>
+          <input type='submit' value='Save bio' />
+          {response?.isLoading && <Spinner/>}
+        </section>
       </form>
     </section>
 

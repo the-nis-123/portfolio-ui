@@ -1,5 +1,6 @@
 import useFormData from "../../hooks/useFormData";
 import { useEditDataMutation } from "../../app/api/coreApiSlice";
+import Spinner from '../../components/loading/Spinner';
 
 const HobbiesForm = ({ data }) => {
 
@@ -33,7 +34,10 @@ const HobbiesForm = ({ data }) => {
           onChange={handleChange}
         />
 
-        <input type='submit' value='Add hobbie' />
+        <section className='form-buttons-wrapper'>
+          <input type='submit' value='Add hobbie' />
+          {response?.isLoading && <Spinner/>}
+        </section>
       </form>
 
       <If condition={data}>

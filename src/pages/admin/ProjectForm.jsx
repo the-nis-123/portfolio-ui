@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useFormData from "../../hooks/useFormData";
 import { useUploadDataMutation } from "../../app/api/coreApiSlice";
+import Spinner from '../../components/loading/Spinner';
 
 const ProjectForm = () => {
   const [projectStatus, setProjectStatus] = useState(true);
@@ -114,11 +115,13 @@ const ProjectForm = () => {
           />
         </If>
 
-        
-        <input 
-          type='submit' 
-          value='Add project' 
-        />
+        <section className='form-buttons-wrapper'>
+          <input 
+            type='submit' 
+            value='Add project' 
+          />
+          {response?.isLoading && <Spinner/>}
+        </section>
       </form>
     </section>
   )

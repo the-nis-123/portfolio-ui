@@ -7,8 +7,8 @@
 .spinner{
  width: 1em;
  height: 1em;
- border-top-color: blue;
- border-left-color: blue;
+ border-top-color: yellowgreen;
+ border-left-color: yellowgreen;
  animation: spinner 1s linear infinite;
  border-bottom-color: transparent;
  border-right-color: transparent;
@@ -16,3 +16,5 @@
  border-width: 2px;
  border-radius: 50%;  
 }
+
+

@@ -25,13 +25,14 @@ input[type='submit']{
   width: 10em;
   cursor: pointer;
   padding: 10px 20px !important;
+  margin: 0;
 }
 
 
 input[type='file']{
- padding: 1em 0;
  cursor: pointer;
  border-bottom: none;
+ margin: 0 0 1em 0;
 }
 
 
@@ -61,8 +62,8 @@ select{
 }
 
 .upload > section  p{
-  padding: 5px 0;
   font-size: 80%;
+  margin-top: 1em;
 }
 
 
@@ -73,4 +74,14 @@ select{
 
 .flexed-form{
   display: flex;
+}
+
+.flexed-form input[type='submit']{
+  margin-bottom: 10px;
+}
+
+.form-buttons-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }

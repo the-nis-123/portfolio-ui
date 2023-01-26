@@ -1,5 +1,6 @@
 import { useEditDataMutation } from "../../app/api/coreApiSlice";
 import { useState } from "react";
+import Spinner from '../../components/loading/Spinner';
 
 const socialHandles = [{
   "name":"linkedin",
@@ -93,8 +94,11 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
             onChange={handleObjectUpdate}
             autoComplete="off"
           />
-          
-          <input type='submit' value='Add' />
+
+          <section className='form-buttons-wrapper'>
+            <input type='submit' value='Add' />
+            {skillsRes?.isLoading && <Spinner/>}
+          </section>
         </form>
 
         <If condition={skillsData}>
@@ -115,7 +119,10 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
             autoComplete="off"
           />
 
-          <input type='submit' value='Add to other skill' />
+          <section className="form-buttons-wrapper">
+            <input type='submit' value='Add to other skills' />
+            {otherSkillsRes?.isLoading && <Spinner/>}
+          </section>
         </form>
       </section>
 
