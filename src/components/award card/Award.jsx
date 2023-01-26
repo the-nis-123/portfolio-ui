@@ -1,7 +1,17 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import {useEffect, useState} from 'react';
 
-const Award = () => {
+const Award = ({data}) => {
+  const [image, setImage] = useState();
+  
+  useEffect(()=> {
+    getFileStream(`/api/public/files/${data?.filename}`)
+    .then((data)=> {
+      setImage(data);
+    })
+    .catch(err => console.error(err))
+  }, [data]);
+
   return (
     <div className='award-award'>
       <img src='' alt='' />

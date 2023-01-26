@@ -1,6 +1,17 @@
-import React from 'react'
+import {useEffect, useState} from 'react';
 
-const Education = () => {
+
+const Education = ({data}) => {
+  const [image, setImage] = useState();
+  
+  useEffect(()=> {
+    getFileStream(`/api/public/files/${data?.filename}`)
+    .then((data)=> {
+      setImage(data);
+    })
+    .catch(err => console.error(err))
+  }, [data]);
+
   return (
     <div>Education</div>
   )
