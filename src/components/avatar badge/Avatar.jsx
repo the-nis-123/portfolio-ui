@@ -3,7 +3,7 @@ import  './avatar.css';
 import image from '../../images/1.jpg';
 import getFileStream from '../../app/api/getFileStream';
 
-const Avatar = () => {
+const Avatar = ({data}) => {
   const navigate = useNavigate();
 
 
@@ -12,9 +12,9 @@ const Avatar = () => {
       <img src={image} alt="" />
 
       <div>
-        <h1>Kintu Denis</h1>
+        <h1>{data?.name}</h1>
           <h6>Software Engineer
-          (from Kampala, Uganda)</h6>
+          (from {data?.location})</h6>
       </div>
     </div>
   )

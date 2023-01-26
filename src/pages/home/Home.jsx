@@ -9,7 +9,6 @@ function Home() {
   const {userProfile, error, isLoading, 
     awards, awardsError, awardsLoading} = useProfileContext();
 
-  console.log(userProfile);
 
   if(isLoading || awardsLoading){
     return <Loading/>

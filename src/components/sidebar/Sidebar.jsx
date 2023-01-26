@@ -11,7 +11,7 @@ const Sidebar = () => {
 
   return (
     <aside className='sidebar auto-hide-scrollbars'>
-      <Avatar url={userProfile?.avatar}/>
+      <Avatar data={userProfile}/>
 
       <ResumeButton url={userProfile?.resume}/>
 

@@ -9,23 +9,27 @@ import AnnualHighlights from './AnnualHighlights';
 import SocialHandles from './SocialHandles';
 import HobbiesForm from './HobbiesForm';
 
-import { useGetProfileQuery } from '../../app/api/coreApiSlice';
 import useProfileContext from '../../hooks/useProfileContext';
+import Loading from '../../components/loading/Loading';
 
 const Upload = () => {
-  const {isLoading, isError, error, data} = useProfileContext();
-  
+  const {userProfile, error, isLoading} = useProfileContext();
+
+  if(isLoading){
+    return <Loading />
+  }
+
   return (
     <div className='page-wrapper upload'>
-      <BioForm />
+      <BioForm intro={userProfile?.intro} motivation={userProfile?.motivation}/>
       <ProjectForm/>
-      <SkillsForm/>
-      <EductaionForm/>
-      <AwardsForm/>
-      <HobbiesForm/>
-      <UploadToGalleryForm/>
-      <AnnualHighlights/>
-      <SocialHandles />
+      <SkillsForm skillsData={userProfile?.skills} otherSkillsData={userProfile?.otherSkills}/>
+      <EductaionForm education={userProfile?.education}/>
+      <AwardsForm awards={userProfile?.awards}/>
+      <HobbiesForm hobbies={userProfile?.hobbies}/>
+      <UploadToGalleryForm gallery={userProfile?.gallery}/>
+      <AnnualHighlights highlights={userProfile?.highlights}/>
+      <SocialHandles socials={userProfile?.socialHandles}/>
     </div>
   )
 }
