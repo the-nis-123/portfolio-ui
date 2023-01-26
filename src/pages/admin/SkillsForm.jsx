@@ -109,7 +109,7 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
       </section>
       
       <section>
-        <h4>Other skills <span>&#9989;</span> </h4>
+        <h3>Other skills <span>&#9989;</span> </h3>
 
         <form className="flexed-form" onSubmit={handleOtherSkillsUpload}>
           <input 

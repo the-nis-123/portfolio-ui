@@ -63,6 +63,11 @@ select{
 
 .upload > section  p{
   font-size: 80%;
+  padding: 1em 0;
+}
+
+
+.upload > section  h3{
   margin-top: 1em;
 }
 

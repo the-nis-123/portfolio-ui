@@ -28,9 +28,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext .jsx,.js src",
     "lint:fix": "eslint --ext .jsx,.js --fix src",
-    "prettify": "prettier --write **/*.{js,jsx,json}",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "prettify": "prettier --write **/*.{js,jsx,json}"
   },
   "husky": {
     "hooks": {
@@ -59,7 +57,6 @@
   "devDependencies": {
     "babel-plugin-jsx-control-statements": "^4.1.2",
     "customize-cra": "^1.0.0",
-    "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "react-app-rewired": "^2.2.1"
   }

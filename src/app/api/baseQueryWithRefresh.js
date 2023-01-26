@@ -1,13 +1,13 @@
 import { fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { setCredentials, logout } from '../features/authSlice';
 
-const baseURL = 'http://localhost:9000';
+const baseURL = 'https://portfolio-api-18am.onrender.com';
 const refreshURL = baseURL + '/refresh';
 
 const basequeryWithRefresh = () => {
   
 const baseQuery = fetchBaseQuery({ 
-  baseUrl: 'http://localhost:9000',
+  baseUrl: 'https://portfolio-api-18am.onrender.com',
     credentials: 'include',
     prepareHeaders: (headers, {getState}) =>{
       const token = getState().authSlice.token;
