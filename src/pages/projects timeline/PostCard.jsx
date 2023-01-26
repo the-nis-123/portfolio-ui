@@ -4,7 +4,7 @@ const PostCard = ({data}) => {
   const [image, setImage] = useState();
   
   useEffect(()=> {
-    getFileStream(`/api/public/files/${data?.avatar}`)
+    getFileStream(data?.avatar)
     .then((data)=> {
       setImage(data);
     })

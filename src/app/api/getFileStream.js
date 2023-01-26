@@ -1,4 +1,4 @@
-const baseURL = 'http://127.0.0.1:6000';
+const baseURL = 'https://portfolio-api-18am.onrender.com/api/public/files/';
 
 const blobToBase64 = (blob) => {
   return new Promise((resolve, _) => {

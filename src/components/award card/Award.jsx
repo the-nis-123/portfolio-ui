@@ -5,7 +5,7 @@ const Award = ({data}) => {
   const [image, setImage] = useState();
   
   useEffect(()=> {
-    getFileStream(`/api/public/files/${data?.filename}`)
+    getFileStream(data?.filename)
     .then((data)=> {
       setImage(data);
     })

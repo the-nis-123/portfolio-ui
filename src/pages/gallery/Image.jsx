@@ -6,7 +6,7 @@ const Image = ({url}) => {
   const [image, setImage] = useState();
   
   useEffect(()=> {
-    getFileStream(`/api/public/files/${url}`)
+    getFileStream(url)
     .then((data)=> {
       setImage(data);
     })

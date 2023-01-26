@@ -6,7 +6,7 @@ const ImageCard = ({url}) => {
   const [image, setImage] = useState();
   
   useEffect(()=> {
-    getFileStream(`/api/public/files/${url}`)
+    getFileStream(url)
     .then((data)=> {
       setImage(data);
     })
@@ -14,7 +14,9 @@ const ImageCard = ({url}) => {
   }, [url]);
 
   return (
-    <div className='gallery-card'>ImageCard</div>
+    <div className='gallery-card'>
+      <img src={image} alt=""/>
+    </div>
   )
 }
 
