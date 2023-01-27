@@ -8,37 +8,34 @@ import useProfileContext from '../../hooks/useProfileContext';
 import { useEffect, useState } from 'react';
 
 const Sidebar = () => {
-  const {userProfile} = useProfileContext();
-
+  const { userProfile } = useProfileContext();
   const [highlights, setHighlights] = useState({});
  
   useEffect(() => {
-    userProfile?.highlights.map((item)=>{
-      let newField = {};
-      
-      if(highlights[item?.year]){
-        newField[item?.year].concat(highlights[item?.year], item?.highlights);
+    let newValues = {...highlights};
+
+    userProfile?.highlights.map((item) => {
+      if(newValues[item?.year]){
+        newValues[item?.year].push(item?.highlights);
       }else{
-        newField[item?.year] = [];
-        newField[item?.year].push(item?.highlights);
+        newValues[item?.year] = [];
+        newValues[item?.year].push(item?.highlights);
       }
 
-      setHighlights((prev) => {
-        return {
-          ...prev,
-          ...newField
-        }
-      });
+      setHighlights(newValues);
     });
   }, [userProfile]);
 
 
-
   return (
     <aside className='sidebar auto-hide-scrollbars'>
-      <Avatar data={userProfile}/>
+      <Avatar 
+        data={userProfile}
+      />
 
-      <ResumeButton url={userProfile?.resume}/>
+      <ResumeButton 
+        url={userProfile?.resume}
+      />
 
       <div className='menu'>
         <Link to='/'>
@@ -56,13 +53,19 @@ const Sidebar = () => {
           <span>Projects Gallery</span>
         </Link>
         
-        <Socials data={userProfile?.socialHandles}/>
+        <Socials 
+          data={userProfile?.socialHandles}
+        />
 
 
         <div className='timeline'>
           <If condition={Object.keys(highlights).length > 0}>
             <For each='timeline' of={Object.keys(highlights).sort( (a, b) => b - a )}>
-              <TimelineCard highlight={highlights[timeline]} year={timeline}/>
+              <TimelineCard 
+                key={timeline} 
+                highlight={highlights[timeline]} 
+                year={timeline}
+              />
             </For>
           </If>
         </div>
