@@ -15,7 +15,7 @@ const SocialHandles = () => {
   const handleUpload = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("socialHandles", data);
+    formData.append("socialHandles", JSON.stringify(data));
 
     try {
       const res = await uploadData({
@@ -39,7 +39,6 @@ const SocialHandles = () => {
           <option value="twitter">Twitter</option>
           <option value="github">GitHub</option>
           <option value="linkedin">Linkedin</option>
-          <option value="stackoverflow">Stackoverflow</option>
         </select>
 
         <input 

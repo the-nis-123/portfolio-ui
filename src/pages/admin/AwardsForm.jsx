@@ -52,7 +52,7 @@ const AwardsForm = ({data}) => {
         />
 
         <input 
-          name='name' 
+          name='url' 
           placeholder='Award link or url if any' 
           type='url'
           autoComplete="off"

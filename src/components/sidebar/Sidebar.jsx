@@ -31,7 +31,7 @@ const Sidebar = () => {
           <span>Projects Gallery</span>
         </Link>
         
-        <Socials />
+        <Socials data={userProfile?.SocialHandles}/>
 
 
         <div className='timeline'>
