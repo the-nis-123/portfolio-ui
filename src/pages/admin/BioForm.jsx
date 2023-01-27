@@ -1,13 +1,11 @@
 import useFormData from "../../hooks/useFormData";
 import { useEditDataMutation } from "../../app/api/coreApiSlice";
-import { useSelector } from "react-redux";
 import Spinner from '../../components/loading/Spinner';
 
 const BioForm = () => {
   
   const { handleChange, formData} = useFormData();
   const [uploadData, response] = useEditDataMutation();
-  const userId = useSelector(state => state.userId);
 
   const handleUpload = async (e) => {
     e.preventDefault();
