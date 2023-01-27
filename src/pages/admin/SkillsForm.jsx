@@ -99,6 +99,7 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
         <form className="flexed-form" onSubmit={handleOtherSkillsUpload}>
           <input 
             type='text' 
+            name="otherSkills"
             placeholder='Other Skills' 
             onChange={(e) => setOtherSkills(e.target.value)}
             autoComplete="off"
