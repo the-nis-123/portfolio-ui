@@ -10,10 +10,10 @@ const Socials = ({data}) => {
       <div className='social-handles'>
         <If condition={data}>
           <For each='socialLink' of={data}>
-            {data?.platform === 'github' && <Link to={data.url}> <SocialGithubCircular size='2rem'/> </Link>}
-            {data?.platform === 'linkedin' && <Link  to={data.url}> <SocialLinkedinCircular size='2rem'/> </Link>}
-            {data?.platform === 'twitter' && <Link  to={data.url}> <SocialTwitterCircular size='2rem'/> </Link>}
-            {data?.platform === 'facebook' && <Link  to={data.url}> <SocialFacebook size='2rem'/> </Link>}
+            {socialLink?.platform === 'github' && <Link to={socialLink.url}> <SocialGithubCircular size='2rem'/> </Link>}
+            {socialLink?.platform === 'linkedin' && <Link  to={socialLink.url}> <SocialLinkedinCircular size='2rem'/> </Link>}
+            {socialLink?.platform === 'twitter' && <Link  to={socialLink.url}> <SocialTwitterCircular size='2rem'/> </Link>}
+            {socialLink?.platform === 'facebook' && <Link  to={socialLink.url}> <SocialFacebook size='2rem'/> </Link>}
           </For>
         </If>
        
