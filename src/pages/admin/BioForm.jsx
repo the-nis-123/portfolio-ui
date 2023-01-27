@@ -42,12 +42,6 @@ const BioForm = () => {
           onChange={handleChange}
         />
 
-        <p>Upload/Change your resume</p>
-        <input type='file' name='resume'  onChange={handleChange}/>
-
-        <p>Upload/updated your avatar</p>
-        <input type='file' name='avatar'  onChange={handleChange}/>
-
         <section className='form-buttons-wrapper'>
           <input type='submit' value='Save bio' />
           {response?.isLoading && <Spinner/>}
