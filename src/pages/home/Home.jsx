@@ -37,10 +37,10 @@ function Home() {
           </For>
         </If>
 
-        <h4> <span>&#9989;</span> Other skills</h4>
+        <h3> <span>&#9989;</span> Other skills</h3>
         <If  condition={userProfile?.otherSkills}>
           <For each='otherSkill' of={userProfile.otherSkills}>
-            <p key={otherSkill}>{otherSkills}</p>
+            <p key={otherSkill}>{otherSkill}</p>
           </For>
         </If>
       </section>
@@ -65,7 +65,11 @@ function Home() {
 
       <section>
         <h3>What I love doing <span>&#128175;</span></h3>
-
+        <If  condition={userProfile?.hobbies}>
+          <For each='hobbie' of={userProfile.hobbies}>
+            <p key={hobbie}>{hobbie}</p>
+          </For>
+        </If>
       </section>
     </div>
   )
