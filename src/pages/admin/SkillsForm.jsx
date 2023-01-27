@@ -1,6 +1,8 @@
 import { useEditDataMutation } from "../../app/api/coreApiSlice";
 import { useState } from "react";
 import Spinner from '../../components/loading/Spinner';
+import Skill from "../../components/skill/Skill";
+
 
 const SkillsForm = ({skillsData, otherSkillsData}) => {
   const [skills, setSkills] = useState({});
@@ -87,8 +89,8 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
         </form>
 
         <If condition={skillsData}>
-          <For each='institution' of={skillsData}>
-            <Award key={JSON.stringify(institution)} data={institution} />
+          <For each='skill' of={skillsData}>
+            <Skill key={JSON.stringify(skill)} data={skill} />
           </For>
         </If>
       </section>
@@ -115,7 +117,7 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
       <If condition={otherSkillsData}>
         <ul>
           <For each='otherSkill' of={otherSkillsData}>
-            <li key={otherSkill} data={institution}>{otherSkill}</li>
+            <li key={otherSkill}>{otherSkill}</li>
           </For>
         </ul>
       </If>

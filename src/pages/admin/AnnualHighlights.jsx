@@ -16,7 +16,7 @@ const AnnualHighlights = () => {
   const handleUpload = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("highlights", data);
+    formData.append("highlights", JSON.stringify(data));
 
     try {
       const res = await uploadData({

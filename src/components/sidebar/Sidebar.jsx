@@ -5,9 +5,34 @@ import Socials from '../social handles/Socials';
 import ResumeButton from '../buttons/ResumeButton';
 import Avatar from '../avatar badge/Avatar';
 import useProfileContext from '../../hooks/useProfileContext';
+import { useEffect, useState } from 'react';
 
 const Sidebar = () => {
   const {userProfile} = useProfileContext();
+
+  const [highlights, setHighlights] = useState({});
+ 
+  useEffect(() => {
+    userProfile?.highlights.map((item)=>{
+      let newField = {};
+      
+      if(highlights[item?.year]){
+        newField[item?.year].concat(highlights[item?.year], item?.highlights);
+      }else{
+        newField[item?.year] = [];
+        newField[item?.year].push(item?.highlights);
+      }
+
+      setHighlights((prev) => {
+        return {
+          ...prev,
+          ...newField
+        }
+      });
+    });
+  }, [userProfile]);
+
+
 
   return (
     <aside className='sidebar auto-hide-scrollbars'>
@@ -35,9 +60,9 @@ const Sidebar = () => {
 
 
         <div className='timeline'>
-          <If condition={userProfile?.highlights}>
-            <For each='timeline' of={userProfile.highlights.sort( (a, b) => b.year - a.year )}>
-              <TimelineCard highlight={timeline} />
+          <If condition={Object.keys(highlights).length > 0}>
+            <For each='timeline' of={Object.keys(highlights).sort( (a, b) => b - a )}>
+              <TimelineCard highlight={highlights[timeline]} year={timeline}/>
             </For>
           </If>
         </div>
