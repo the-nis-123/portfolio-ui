@@ -2,20 +2,6 @@ import { useEditDataMutation } from "../../app/api/coreApiSlice";
 import { useState } from "react";
 import Spinner from '../../components/loading/Spinner';
 
-const socialHandles = [{
-  "name":"linkedin",
-  "url":"https://www.linkedin.com/in/kintu-denis/"
-},
-{
-  "name":"twitter",
-  "url":"https://twitter.com/tthhenis"
-},
-{
-  "name":"github",
-  "url":"https://github.com/the-nis-123"
-}
-]
-
 const SkillsForm = ({skillsData, otherSkillsData}) => {
   const [skills, setSkills] = useState({});
   const [otherSkills, setOtherSkills] = useState("");
@@ -34,7 +20,6 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('skills', JSON.stringify(skills))
-    formData.append('socialHandles', JSON.stringify(socialHandles))
 
     try {
         const res = await uploadSkills({

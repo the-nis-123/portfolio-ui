@@ -6,7 +6,7 @@ const Award = ({data}) => {
   const [image, setImage] = useState();
   
   useEffect(()=> {
-    getFileStream(data?.filename)
+    getFileStream(data?.files[0])
     .then((data)=> {
       setImage(data);
     })
@@ -15,17 +15,17 @@ const Award = ({data}) => {
 
   return (
     <div className='award-award'>
-      <img src='' alt='' />
+      <img src={image} alt='' />
 
       <div>
-        <h3>Award name</h3>
+        <h3>{data?.name}</h3>
         
         <h5>
           <span>Issued By:</span>
-          <span>name of issuerer</span>
+          <span>{data?.awardedBy}</span>
         </h5>
 
-        <Link to="#">View it here</Link>
+        <Link to={data?.url}>View it here</Link>
       </div>
     </div>
   )

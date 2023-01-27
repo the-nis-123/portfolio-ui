@@ -4,6 +4,8 @@ import {SocialGithubCircular, SocialLinkedinCircular,
 import { Link } from 'react-router-dom';
 
 const Socials = ({data}) => {
+  console.log(data);
+  
   return (
     <div className="sub-container">
       <h3>Social Handles</h3>
