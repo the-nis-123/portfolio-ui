@@ -78,3 +78,8 @@
   .auto-hide-scrollbars:hover{
     mask-position: left top;
   }
+
+
+  li{
+    list-style-position: inside;
+  }

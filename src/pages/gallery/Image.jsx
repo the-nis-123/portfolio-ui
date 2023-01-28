@@ -8,6 +8,7 @@ const Image = ({url}) => {
   useEffect(()=> {
     getFileStream(url)
     .then((data)=> {
+      console.log(data);
       setImage(data);
     })
     .catch(err => console.error(err))

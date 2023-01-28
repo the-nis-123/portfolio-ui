@@ -44,6 +44,7 @@ const getFileStream = async(url) => {
     const res = await fetch(baseURL + url);
     return await readImageFromStream(res.body)
   } catch (error) {
+    throw new Error(error);
   }
 }
 

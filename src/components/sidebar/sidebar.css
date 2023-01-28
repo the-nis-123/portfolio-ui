@@ -92,7 +92,7 @@ ol{
 }
 
 ol li{
-  list-style-position: inside;
+  list-style-position: outside;
   list-style-type: square;
   font-size: 90%;
 }
