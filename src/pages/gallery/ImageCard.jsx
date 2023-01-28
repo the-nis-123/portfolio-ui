@@ -5,6 +5,8 @@ import {useEffect, useState} from 'react';
 const ImageCard = ({url}) => {
   const [image, setImage] = useState();
   
+  console.log(url);
+
   useEffect(()=> {
     getFileStream(url)
     .then((data)=> {

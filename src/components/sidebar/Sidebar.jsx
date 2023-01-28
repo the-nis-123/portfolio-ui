@@ -15,11 +15,11 @@ const Sidebar = () => {
     let newValues = {...highlights};
 
     userProfile?.highlights.map((item) => {
-      if(newValues[item?.year]){
-        newValues[item?.year].push(item?.highlights);
+      if(newValues[item?.year.split('-')[0]]){
+        newValues[item?.year.split('-')[0]].push(item?.highlights);
       }else{
-        newValues[item?.year] = [];
-        newValues[item?.year].push(item?.highlights);
+        newValues[item?.year.split('-')[0]] = [];
+        newValues[item?.year.split('-')[0]].push(item?.highlights);
       }
 
       setHighlights(newValues);
