@@ -4,14 +4,23 @@ import Award from '../../components/award card/Award';
 import Education from '../../components/education badge/Education';
 import useProfileContext from '../../hooks/useProfileContext';
 import Loading from '../../components/loading/Loading';
+import ErrorPage from '../../components/loading/ErrorPage';
 
 function Home() {
-  const {userProfile, error, isLoading, 
-    awards, awardsError, awardsLoading} = useProfileContext();
+  const {
+    userProfile, error, isLoading, 
+    awards, awardsError, awardsLoading,
+    skills, skillsError, skillsLoading
+  } = useProfileContext();
 
 
-  if(isLoading || awardsLoading){
+  if(isLoading || skillsLoading || skillsError){
     return <Loading/>
+  }
+
+  
+  if(error || awardsError || awardsLoading){
+    return <ErrorPage/>
   }
 
   return (
@@ -31,15 +40,15 @@ function Home() {
 
       <section>
         <h3>Tech Stack <span>&#128187;</span> </h3>
-        <If  condition={userProfile?.skills}>
-          <For each='skill' of={userProfile.skills}>
+        <If  condition={skills}>
+          <For each='skill' of={skills}>
             <Skill key={skill.skill} data={skill} />
           </For>
         </If>
 
         <h3> <span>&#9989;</span> Other skills</h3>
-        <If  condition={userProfile?.otherSkills}>
-          <For each='otherSkill' of={userProfile.otherSkills}>
+        <If  condition={skills}>
+          <For each='otherSkill' of={skills}>
             <p key={otherSkill}>{otherSkill}</p>
           </For>
         </If>
