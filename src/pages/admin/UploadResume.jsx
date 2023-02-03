@@ -2,7 +2,7 @@ import useFormData from "../../hooks/useFormData";
 import { useUploadDataMutation } from "../../app/api/coreApiSlice";
 import Spinner from '../../components/loading/Spinner';
 
-const UploadToGalleryForm = () => {
+const UploadResume = () => {
 
   const { handleChange, formData} = useFormData();
   const [uploadData, response] = useUploadDataMutation();
@@ -24,20 +24,19 @@ const UploadToGalleryForm = () => {
 
   return (
     <section>
-      <h3>Upload to gallery <span>&#128526;</span> </h3>
+      <h3>Upload/Change your Resume <span>&#128526;</span> </h3>
       <form onSubmit={handleUpload}>
-        <p>upload images and screen shots to your gallery</p>
         <input 
           type='file' 
-          name='files' 
-          multiple
+          name='resume' 
+          accept=".pdf, .doc, .docx "
           onChange={handleChange}
         />
 
         <section className='form-buttons-wrapper'>
           <input 
             type='submit' 
-            value='Upload to gallery' 
+            value='Upload resume' 
           />
 
           {response?.isLoading && <Spinner/>}
@@ -47,4 +46,4 @@ const UploadToGalleryForm = () => {
   )
 }
 
-export default UploadToGalleryForm
+export default UploadResume

@@ -8,6 +8,8 @@ import AwardsForm from './AwardsForm';
 import AnnualHighlights from './AnnualHighlights';
 import SocialHandles from './SocialHandles';
 import HobbiesForm from './HobbiesForm';
+import UploadAvatar from './UploadAvatar';
+import UploadResume from './UploadResume';
 
 import useProfileContext from '../../hooks/useProfileContext';
 import Loading from '../../components/loading/Loading';
@@ -22,6 +24,8 @@ const Upload = () => {
   return (
     <div className='page-wrapper upload'>
       <BioForm intro={userProfile?.intro} motivation={userProfile?.motivation}/>
+      <UploadAvatar />
+      <UploadResume />
       <ProjectForm/>
       <SkillsForm skillsData={userProfile?.skills} otherSkillsData={userProfile?.otherSkills}/>
       <EductaionForm education={userProfile?.education}/>

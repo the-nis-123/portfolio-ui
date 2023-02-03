@@ -1,6 +1,5 @@
 const TimelineCard = ({highlight, year}) => {
   
-  console.log(highlight);
 
   return (
     <div className='timeline-card'>

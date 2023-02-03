@@ -23,7 +23,6 @@ const SocialHandles = () => {
         body: formData
       }).unwrap();
   
-      console.log(res);
     } catch (error) {
       console.log(error);
     }

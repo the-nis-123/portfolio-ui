@@ -7,11 +7,8 @@ const useFormData = () => {
   const handleChange = (e) => {
     e.persist();
     let newEntry = {};
-
-    e.target.type === 'file'? newEntry[`${e.target.name}`] = e.target.files :
-    newEntry[`${e.target.name}`] = e.target.value;
-
-    setData( state => { return {...state, ...newEntry} });
+    newEntry[`${e.target.name}`] = e.target.type === 'file'? e.target.files : e.target.value;
+    setData( state => ({...state, ...newEntry}) );
   }
 
   useEffect(() => {
@@ -19,7 +16,7 @@ const useFormData = () => {
       //because the files value is a nested array-like object
       //and we want append all available file objects to a single 
       //fieldname in case user choses multiple files
-      if(key === 'files'){
+      if(key === 'files' || key === 'avatar' || key === 'resume'){
         Object.values(data[key]).forEach( fileObj => formData.append(`${key}`, fileObj));
       }
       else{

@@ -29,7 +29,6 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
         body: formData
       }).unwrap();
   
-      console.log(res);
     } catch (error) {
       console.log(error);
     }
@@ -45,8 +44,6 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
         url: "/api/administrator/profile",
         body: formData
       }).unwrap();
-  
-      console.log(res);
     } catch (error) {
       console.log(error);
     }

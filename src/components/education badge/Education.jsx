@@ -5,8 +5,6 @@ import getFileStream from '../../app/api/getFileStream';
 const Education = ({data}) => {
   const [image, setImage] = useState();
   
-  console.log(data);
-
   useEffect(()=> {
     getFileStream(data?.filename)
     .then((data)=> {

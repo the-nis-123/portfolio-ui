@@ -34,7 +34,7 @@ const Sidebar = () => {
       />
 
       <ResumeButton 
-        url={userProfile?.resume}
+        userProfile={userProfile}
       />
 
       <div className='menu'>
