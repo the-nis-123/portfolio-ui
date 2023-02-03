@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import {useEffect, useState} from 'react';
 import getFileStream from '../../app/api/getFileStream';
+import './award.css';
 
 const Award = ({data}) => {
   const [image, setImage] = useState();
@@ -14,10 +15,10 @@ const Award = ({data}) => {
   }, [data]);
 
   return (
-    <div className='award-award'>
+    <div className='award-card'>
       <img src={image} alt='' />
 
-      <div>
+      <div className='award-details'>
         <h3>{data?.name}</h3>
         
         <h5>

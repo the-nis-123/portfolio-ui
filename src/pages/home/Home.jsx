@@ -30,7 +30,7 @@ function Home() {
 
 
       <section>
-        <h3>Skills <span>&#128187;</span> </h3>
+        <h3>Tech Stack <span>&#128187;</span> </h3>
         <If  condition={userProfile?.skills}>
           <For each='skill' of={userProfile.skills}>
             <Skill key={skill.skill} data={skill} />

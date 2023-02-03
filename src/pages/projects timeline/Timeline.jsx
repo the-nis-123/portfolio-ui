@@ -13,11 +13,13 @@ function Timeline() {
 
   return (
     <div className='page-wrapper'>
-      <If condition={data}>
-        <For each="post" of={data}>
-          <Post data={post}/>
-        </For>
-      </If>
+      <section>
+        <If condition={data}>
+          <For each="post" of={data}>
+            <Post data={post}/>
+          </For>
+        </If>
+      </section>
     </div>
   )
 }

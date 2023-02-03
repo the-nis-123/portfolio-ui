@@ -1,0 +1,29 @@
+.award-card{
+  display: flex;
+  align-items: flex-start;
+  margin: 1em 0;
+  gap: 1em;
+}
+
+.award-card img{
+ width: 7em;
+ aspect-ratio: 16/9;
+ object-fit: cover;
+}
+
+.award-details > *{
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.award-card a{
+  color: inherit;
+}
+
+
+
+.award-card a:hover{
+  color: yellowgreen;
+}

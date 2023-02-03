@@ -20,6 +20,10 @@ const coreApi = createApi({
       query: () => '/api/public/awards'
     }),
 
+    getSkills: builder.query({
+      query: () => '/api/public/skills'
+    }),
+
     deleteData: builder.mutation({
       query: optionsObject => ({
         ...optionsObject,
@@ -47,6 +51,7 @@ export default coreApi;
 
 export const {
   useGetAwardsQuery,
+  useGetSkillsQuery,
   useGetProjectsQuery,
   useGetProfileQuery,
   useUploadDataMutation,

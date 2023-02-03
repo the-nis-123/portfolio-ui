@@ -40,17 +40,17 @@ const Sidebar = () => {
       <div className='menu'>
         <Link to='/'>
           <span className='hearts'>&#9654;</span>
-          <span>Me, Programming and Software</span>
+          <span>Me, Programming & Software</span>
         </Link>
         
         <Link to='/timeline'>
           <span className='hearts'>&#9654;</span>
-          <span>Career experience</span>
+          <span>Experience & Projects</span>
         </Link>
 
         <Link to='/gallery'>
           <span className='hearts'>&#9654;</span>
-          <span>Projects Gallery</span>
+          <span>Quick Gallery</span>
         </Link>
         
         <Socials 

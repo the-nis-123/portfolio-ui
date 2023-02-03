@@ -24,14 +24,17 @@ const PostCard = ({data}) => {
             </For>
           </If>
         </div>
+
         <p>{data?.projectName}</p>
         <p>
           <span>live</span>
           <span>source code</span>
         </p>
       </div>
+
       <p>{data?.description}</p>
 
+      <p>{data?.achievements}</p>
     </div>
   )
 }

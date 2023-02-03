@@ -49,6 +49,7 @@ const AwardsForm = ({data}) => {
           name='files' 
           type='file'
           onChange={handleChange}
+          accept=".jpg, .jpeg, .png"
         />
 
         <input 

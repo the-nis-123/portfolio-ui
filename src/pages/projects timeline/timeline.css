@@ -1,3 +1,6 @@
 .post{
-  min-height: 35em;
+  width: 100%;
+  height: 25em;  
+  border: solid 3px red;
+  margin-bottom: 1em;
 }

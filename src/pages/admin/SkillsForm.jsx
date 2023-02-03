@@ -2,11 +2,13 @@ import { useEditDataMutation } from "../../app/api/coreApiSlice";
 import { useState } from "react";
 import Spinner from '../../components/loading/Spinner';
 import Skill from "../../components/skill/Skill";
+import useFormData from "../../hooks/useFormData";
 
 
 const SkillsForm = ({skillsData, otherSkillsData}) => {
   const [skills, setSkills] = useState({});
   const [otherSkills, setOtherSkills] = useState("");
+  const {handleChange, formData} = useFormData();
 
   const [uploadSkills, skillsRes] = useEditDataMutation();
   const [uploadOtherSkills, otherSkillsRes] = useEditDataMutation();
@@ -20,7 +22,6 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
 
   const handleUploadSkill = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
     formData.append('skills', JSON.stringify(skills))
 
     try {
@@ -77,6 +78,14 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
             placeholder='Skill level'
             onChange={handleObjectUpdate}
             autoComplete="off"
+          />
+
+          <p>Add skill icon</p>
+          <input 
+            name='files' 
+            type='file'
+            onChange={handleChange}
+            accept=".jpg, .jpeg, .png"
           />
 
           <section className='form-buttons-wrapper'>

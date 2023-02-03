@@ -60,12 +60,12 @@ const ProjectForm = () => {
           onChange={handleChange}
         />
         
-        <p>Add files(images)</p>
+        <p>Add project cover image</p>
         <input 
           type='file' 
           name='files'
-          multiple
           onChange={handleChange}
+          accept=".jpg, .jpeg, .png"
         />
         
         <p>Links</p>
@@ -79,7 +79,7 @@ const ProjectForm = () => {
         
         <input 
           type='url' 
-          name='sourceCode' 
+          name='sourceUrl' 
           autoComplete="off"
           placeholder='Source code url'
           onChange={handleChange}
