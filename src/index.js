@@ -33,9 +33,9 @@ root.render(
                 {/* <Route element={<PersistLogin />}>
                   <Route element={<RequireAuth />}> */}
                     <Route path='/upload' element={<Upload /> } />
-                  </Route>
-                {/* </Route>
-              </Route> */}
+                  {/* </Route>
+                </Route> */}
+              </Route>
 
               <Route path='/login' element={<Login/> } />
             </Routes>

@@ -4,7 +4,6 @@ import getFileStream from '../../app/api/getFileStream';
 
 const PostCard = ({data}) => {
   const [image, setImage] = useState();
-  console.log(data);
   
   useEffect(()=> {
     getFileStream(data?.avatar)

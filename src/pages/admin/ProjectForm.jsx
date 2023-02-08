@@ -2,16 +2,23 @@ import { useState } from "react";
 import useFormData from "../../hooks/useFormData";
 import { useUploadDataMutation } from "../../app/api/coreApiSlice";
 import Spinner from '../../components/loading/Spinner';
+import useProfileContext from '../../hooks/useProfileContext';
 
 const ProjectForm = () => {
   const [projectStatus, setProjectStatus] = useState(true);
+  const [techStack, setTechStack] = useState([]);
+  const [skillFilter, setSkillFilter] = useState("");
+
   const { handleChange, formData} = useFormData();
   const [uploadData, response] = useUploadDataMutation();
 
+  const {  skills } = useProfileContext();
   
   const handleUpload = async (e) => {
     e.preventDefault();
-    formData.append('isOnGoing', projectStatus)
+    formData.append('isOnGoing', projectStatus);
+    formData.append('techStack', JSON.stringify(techStack))
+
 
     try {
       const res = await uploadData({
@@ -19,9 +26,7 @@ const ProjectForm = () => {
         body: formData
       }).unwrap();
   
-      console.log(res);
     } catch (error) {
-      console.log(error);
     }
   }
 
@@ -83,6 +88,13 @@ const ProjectForm = () => {
           autoComplete="off"
           placeholder='Source code url'
           onChange={handleChange}
+        />
+
+        <input 
+          type='text' 
+          autoComplete="off"
+          placeholder='Add skills or any tools used on this project'
+          onChange={(e) => setSkillFilter(e.target.value)}
         />
 
         <p>Start date</p>

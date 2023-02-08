@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import  './avatar.css';
 import getFileStream from '../../app/api/getFileStream';
 import { useEffect, useState } from 'react';
+import { EditBox } from "@styled-icons/remix-fill/EditBox";
 
 const Avatar = ({data}) => {
   const navigate = useNavigate();
@@ -16,14 +17,16 @@ const Avatar = ({data}) => {
   }, [data]);
 
   return (
-    <div className='avatar' onClick={()=>navigate('/')}>
-      <img src={image} alt="" />
+    <div className='avatar'>
+      <img src={image} alt=""  onClick={()=>navigate('/')}/>
 
-      <div>
+      <div  onClick={()=>navigate('/')}>
         <h1>{data?.name}</h1>
           <h6>Software Engineer
           (from {data?.location})</h6>
       </div>
+
+      <EditBox size='2em' onClick={() => navigate('/upload') }/>
     </div>
   )
 }

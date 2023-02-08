@@ -1,6 +1,7 @@
 import useFormData from "../../hooks/useFormData";
-import  './login.css';
 import { useLoginMutation } from "../../app/api/authApiSlice";
+import Spinner from "../../components/loading/Spinner";
+import  './login.css';
 
 function Login() {
   const { handleChange, formData} = useFormData();
@@ -11,6 +12,7 @@ function Login() {
     const res = await login(formData).unwrap();
     console.log(res);
   }
+
 
   return (
     <div className='login page-wrapper'>

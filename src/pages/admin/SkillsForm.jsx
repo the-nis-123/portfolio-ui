@@ -100,33 +100,6 @@ const SkillsForm = ({skillsData, otherSkillsData}) => {
           </For>
         </If>
       </section>
-      
-      <section>
-        <h3>Other skills <span>&#9989;</span> </h3>
-
-        <form className="flexed-form" onSubmit={handleOtherSkillsUpload}>
-          <input 
-            type='text' 
-            name="otherSkills"
-            placeholder='Other Skills' 
-            onChange={(e) => setOtherSkills(e.target.value)}
-            autoComplete="off"
-          />
-
-          <section className="form-buttons-wrapper">
-            <input type='submit' value='Add to other skills' />
-            {otherSkillsRes?.isLoading && <Spinner/>}
-          </section>
-        </form>
-      </section>
-
-      <If condition={otherSkillsData}>
-        <ul>
-          <For each='otherSkill' of={otherSkillsData}>
-            <li key={otherSkill}>{otherSkill}</li>
-          </For>
-        </ul>
-      </If>
     </section>
   )
 }
