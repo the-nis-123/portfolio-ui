@@ -1,6 +1,28 @@
 .post{
   width: 100%;
-  height: 25em;  
-  border: solid 3px red;
+  margin-bottom: 3em;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .1);
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.post img{
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 5px;
   margin-bottom: 1em;
+}
+
+.post .skeleton{
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  background: rgba(255, 255, 255, .1);
+}
+
+.post h3{
+  padding: 1em 0 0.3em 0;
 }

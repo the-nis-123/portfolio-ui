@@ -30,11 +30,11 @@ root.render(
                 <Route path='/gallery' element={<Gallery /> } />
                 <Route path='/timeline' element={<Timeline /> } />
 
-                {/* <Route element={<PersistLogin />}>
-                  <Route element={<RequireAuth />}> */}
+                <Route element={<PersistLogin />}>
+                  <Route element={<RequireAuth />}>
                     <Route path='/upload' element={<Upload /> } />
-                  {/* </Route>
-                </Route> */}
+                  </Route>
+                </Route>
               </Route>
 
               <Route path='/login' element={<Login/> } />

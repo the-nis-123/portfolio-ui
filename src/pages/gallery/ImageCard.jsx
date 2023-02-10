@@ -16,7 +16,13 @@ const ImageCard = ({url}) => {
 
   return (
     <div className='gallery-card'>
-      <img src={image} alt=""/>
+      <If condition={image}>
+        <img src={image} alt=""/>
+      </If>
+
+      <If condition={!image}>
+        <div className='skeleton'/>
+      </If>
     </div>
   )
 }
